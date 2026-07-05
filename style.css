@@ -1,0 +1,430 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:"Arial","Hiragino Sans","Yu Gothic",sans-serif;
+  background:#d8e6ff;
+}
+
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/*==========================
+  全体
+==========================*/
+
+#app{
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+
+.screen{
+  display:none;
+  width:100%;
+  height:100%;
+}
+
+.screen.active{
+  display:flex;
+  flex-direction:column;
+}
+
+/*==========================
+  タイトル
+==========================*/
+
+#titleScreen{
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(#9ed8ff,#e7f7ff);
+}
+
+.titleCard{
+
+  background:white;
+  border-radius:18px;
+  padding:40px;
+
+  min-width:420px;
+
+  text-align:center;
+
+  box-shadow:0 6px 16px rgba(0,0,0,.2);
+}
+
+.titleCard h1{
+
+  font-size:48px;
+  margin-bottom:16px;
+
+}
+
+.titleCard p{
+
+  margin-bottom:30px;
+  font-size:22px;
+
+}
+
+.titleCard button{
+
+  font-size:22px;
+
+  padding:15px 40px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#58c36d;
+  color:white;
+
+  cursor:pointer;
+
+}
+
+.titleCard button:hover{
+
+  background:#43ae58;
+
+}
+
+/*==========================
+  上部バー
+==========================*/
+
+.topBar{
+
+  height:70px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-around;
+
+  background:#35495e;
+  color:white;
+
+  font-size:24px;
+
+}
+
+/*==========================
+  ホーム
+==========================*/
+
+.homeMain{
+
+  flex:1;
+
+  display:flex;
+
+  gap:20px;
+
+  padding:20px;
+
+  background:#dfeee2;
+
+}
+
+.panel{
+
+  flex:1;
+
+  background:white;
+
+  border-radius:16px;
+
+  padding:20px;
+
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
+
+}
+
+.panel h2{
+
+  margin-bottom:15px;
+
+}
+
+.panel p{
+
+  margin:12px 0;
+
+  font-size:22px;
+
+}
+
+.panel button{
+
+  margin-top:25px;
+
+  font-size:22px;
+
+  padding:12px 25px;
+
+  border:none;
+  border-radius:10px;
+
+  background:#4ea4ff;
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+.panel button:hover{
+
+  background:#378fe8;
+
+}
+
+.unitPreview{
+
+  display:block;
+
+  margin:30px auto;
+
+  width:160px;
+
+  image-rendering:pixelated;
+
+}
+
+/*==========================
+  ワールドマップ
+==========================*/
+
+.mapMain{
+
+  flex:1;
+
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:40px;
+
+  background:#8fd17a;
+
+}
+
+.mapNode{
+
+  width:180px;
+  height:120px;
+
+  border:none;
+
+  border-radius:18px;
+
+  font-size:24px;
+
+  font-weight:bold;
+
+}
+
+.base{
+
+  background:white;
+
+}
+
+.enemy{
+
+  background:#ffb3b3;
+
+  cursor:pointer;
+
+}
+
+.enemy:hover{
+
+  background:#ff8f8f;
+
+}
+
+.mapLine{
+
+  width:120px;
+  height:8px;
+
+  background:#795548;
+
+}
+
+/*==========================
+  戦闘
+==========================*/
+
+.battleField{
+
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  overflow:hidden;
+
+}
+
+.battleBg{
+
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+}
+
+.castle{
+
+  position:absolute;
+
+  bottom:90px;
+
+  width:220px;
+
+  image-rendering:pixelated;
+
+}
+
+.catCastle{
+
+  left:30px;
+
+}
+
+.mouseCastle{
+
+  right:30px;
+
+}
+
+.unitLayer{
+
+  position:absolute;
+
+  bottom:70px;
+
+  width:100%;
+  height:260px;
+
+  pointer-events:none;
+
+}
+
+.unit{
+
+  position:absolute;
+
+  width:96px;
+
+  image-rendering:pixelated;
+
+}
+
+/*==========================
+  戦闘UI
+==========================*/
+
+.battleUi{
+
+  position:absolute;
+
+  left:0;
+  right:0;
+  bottom:0;
+
+  height:90px;
+
+  background:rgba(255,255,255,.9);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:0 25px;
+
+}
+
+#battleMessage{
+
+  font-size:24px;
+
+  font-weight:bold;
+
+}
+
+#sendWarriorBtn{
+
+  font-size:24px;
+
+  padding:12px 28px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#58c36d;
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+#sendWarriorBtn:hover{
+
+  background:#3ea553;
+
+}
+
+/*==========================
+  スマホ横持ち対応
+==========================*/
+
+@media (orientation:portrait){
+
+  body::before{
+
+    content:"📱 横向きでプレイしてください";
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:34px;
+
+    color:white;
+
+    background:#1e293b;
+
+    z-index:9999;
+
+  }
+
+}
