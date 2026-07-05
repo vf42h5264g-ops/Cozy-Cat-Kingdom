@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Cozy Cat Kingdom</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app">
+
+    <!-- タイトル画面 -->
+    <section id="titleScreen" class="screen active">
+      <div class="titleCard">
+        <h1>Cozy Cat Kingdom</h1>
+        <p>ネコ王国を取り戻そう！</p>
+        <button id="startBtn">ゲーム開始</button>
+      </div>
+    </section>
+
+    <!-- 内政画面 -->
+    <section id="homeScreen" class="screen">
+      <header class="topBar">
+        <div>🏰 王国 Lv.1</div>
+        <div>🌾 <span id="foodText">0</span></div>
+        <div>🪵 <span id="woodText">0</span></div>
+        <div>💎 <span id="stoneText">0</span></div>
+      </header>
+
+      <main class="homeMain">
+        <div class="panel">
+          <h2>内政</h2>
+          <p>🐱 村ネコ：<span id="villagerText">3</span>匹</p>
+          <p>⚔️ 戦士ネコ：<span id="warriorText">3</span>匹</p>
+          <p>🌾 カリカリ農園：<span id="farmStatusText">未奪還</span></p>
+
+          <button id="mapBtn">ワールドマップへ</button>
+        </div>
+
+        <div class="panel">
+          <h2>戦力</h2>
+          <img src="img/cat/cat_knight.png" class="unitPreview" alt="戦士ネコ">
+          <p>戦士ネコはネコ王国の基本兵です。</p>
+        </div>
+      </main>
+    </section>
+
+    <!-- ワールドマップ画面 -->
+    <section id="mapScreen" class="screen">
+      <header class="topBar">
+        <button id="backHomeBtn">← 戻る</button>
+        <div>ワールドマップ</div>
+      </header>
+
+      <main class="mapMain">
+        <div class="mapNode base">🏰 王国跡地</div>
+        <div class="mapLine"></div>
+        <button id="farmBattleBtn" class="mapNode enemy">🌾 カリカリ農園<br><small>見張ネズミ ×1</small></button>
+      </main>
+    </section>
+
+    <!-- 戦闘画面 -->
+    <section id="battleScreen" class="screen">
+      <div class="battleField">
+        <img src="img/backgrounds/field.png" class="battleBg" alt="草原">
+
+        <img src="img/buildings/cat_castle.png" class="castle catCastle" alt="ネコ城">
+        <img src="img/buildings/mouse_castle.png" class="castle mouseCastle" alt="ネズミ城">
+
+        <div id="catUnits" class="unitLayer"></div>
+        <div id="mouseUnits" class="unitLayer"></div>
+
+        <div class="battleUi">
+          <div id="battleMessage">戦士ネコを出撃させよう！</div>
+          <button id="sendWarriorBtn">⚔️ 戦士出撃</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 結果画面 -->
+    <section id="resultScreen" class="screen">
+      <div class="titleCard">
+        <h2>勝利！</h2>
+        <p>カリカリ農園を奪還しました！</p>
+        <p>🌾 カリカリ農園が使えるようになりました。</p>
+        <button id="resultHomeBtn">内政画面へ</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
